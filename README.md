@@ -19,7 +19,7 @@ camera/          # RTSP camera connection and frame grabbing
 config/          # Configuration loading and validation
 storage/         # Frame saving and session management
 config.example.yaml
-docker-compose.example.yml
+docker-compose.example.yaml
 Dockerfile
 ```
 
@@ -86,21 +86,17 @@ logging:
 Copy the example compose file and adjust the volume paths:
 
 ```bash
-cp docker-compose.example.yml docker-compose.yml
+cp docker-compose.example.yaml docker-compose.yaml
 ```
 
-Edit the host-side volume paths in `docker-compose.yml` to point to where you want frames and logs stored, then build and start the container:
+Edit the host-side volume paths in `docker-compose.yaml` to point to where you want frames and logs stored, then build the image and start the container:
 
 ```bash
-docker compose build
+docker build -t tapo-timelapse-capture .
 docker compose up -d
 ```
 
-Or in one step:
-
-```bash
-docker compose up -d --build
-```
+> **Note:** avoid using `docker compose up --build` as it may fail due to a BuildKit provenance metadata bug on some Docker versions.
 
 View logs:
 

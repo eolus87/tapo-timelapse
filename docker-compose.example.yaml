@@ -1,7 +1,7 @@
 services:
   capture:
     build: .
-    container_name: tapo-capture
+    container_name: tapo-timelapse
     restart: unless-stopped
     env_file: .env
     volumes:

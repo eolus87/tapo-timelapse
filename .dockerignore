@@ -1,0 +1,8 @@
+frames/
+logs/
+.env
+.git/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/

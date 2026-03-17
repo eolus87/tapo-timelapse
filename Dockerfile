@@ -11,10 +11,6 @@ WORKDIR /app
 COPY Pipfile Pipfile.lock ./
 RUN pipenv install --system --deploy
 
-COPY camera/ ./camera/
-COPY config/ ./config/
-COPY storage/ ./storage/
-COPY main.py .
-COPY config.yaml .
+COPY . .
 
 CMD ["python", "main.py"]

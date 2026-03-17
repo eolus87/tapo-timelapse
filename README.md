@@ -123,17 +123,17 @@ pipenv run python main.py
 
 ## Frame output
 
-Frames are saved under the configured `frames_dir`, organised into session subdirectories named by start timestamp:
+Frames are saved directly under the configured `frames_dir`, named with a sequential counter and UTC timestamp:
 
 ```
 frames/
-  20260317_151656/
-    frame_000001_20260317_152559.jpg
-    frame_000002_20260317_152629.jpg
-    ...
+  frame_000001_20260317_152559.jpg
+  frame_000002_20260317_152629.jpg
+  frame_000003_20260317_152659.jpg
+  ...
 ```
 
-If the service restarts, it resumes the frame counter from the last saved frame in the session directory.
+If the service restarts, it resumes the frame counter from the highest existing frame number in the directory.
 
 ## Resource limits
 

@@ -1,0 +1,17 @@
+camera:
+  ip: 192.168.1.100
+  stream: stream1        # stream1 = HD, stream2 = sub-stream (lower res/CPU)
+
+capture:
+  interval_seconds: 30   # seconds between frames
+  jpeg_quality: 85       # 1-100
+  session_name: ""       # leave blank to auto-generate from startup timestamp
+
+output:
+  frames_dir: /frames    # inside container — mount to any host path or external drive
+  logs_dir: /logs        # inside container — mount to any host path or external drive
+
+logging:
+  level: INFO            # DEBUG, INFO, WARNING, ERROR
+  max_bytes: 5242880     # 5 MB per log file
+  backup_count: 3        # number of rotated files to keep
